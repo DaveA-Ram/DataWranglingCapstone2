@@ -1,0 +1,42 @@
+MODEL REPORT
+PROBLEM IDENTIFICATION OVERVIEW
+* DEFINE THE QUESTION SPECIFIC TO MODELING ACTIVITIES—DEVICE FAILURES PREDICTION
+The SVM is highly accurate and precise if it is given adequate data to work with; ideally, working with data with at least several hundred observations (rows) should suffice to give the SVM enough data to both train and test. The data must also be preprocessed to clean-up any existing null values or SVM will not work.
+* IDENTIFY THE DATA NEEDED AND OR AVAILABLE:
+For the Gaussian Kernel SVM, one feature (variable/column) that contains the classes in which to identify the observations with based on the readings of the features which contain the attributes or numerical data in which the SVM will employ to make an accurate prediction as much as possible. For the datasets of primary, lower secondary, and upper secondary or the concatenated data frame which combines them all, only Region, Sub-region, and Development Regions are suitable features to be used as the feature with object datatype, and the following ten float datatype features Total, Female, Male, Rural Residence, Urban Residence, Poorest Wealth quintile, Second Wealth quintile, Middle Wealth quintile, Fourth Wealth quintile, and Richest Wealth quintile are suitable and relevant to be used for the features that provide for the data for the SVM to infer and predict labels for the observations.
+* DEFINE THE DATA TIMEFRAME:
+2010-2019. The 2010s.
+* DESCRIBE THE MODELING RESPONSE:
+Non-binary. Multiclass: Least Developed; Less Developed; More Developed.
+* UNSUPERVISED OR SUPERVISED CLASSIFICATION OR REGRESSION MODEL:
+Supervised Classification.
+* WHAT DELIVERABLES WILL BE GENERATED:
+A concatenated dataset of all the original datasets as follows: Primary; Lower Secondary; Upper Secondary. An SVM run of the concatenated data and treating the three original data sets as separate hypothetical datasets to confirm the efficacy of the SVM. Also, three charts; one bar plot, two scatterplots with features selected that pertained to the problem identification to provide visuals and support for the hypothesis.
+* DATA PREPROCESSING STEPS OF NOTE:
+1. Dropped duplicate rows.
+2. Joined three originally separate datasets by concatenation.
+3. Ultimately dropped eleven columns that were not applicable to problem identification and kept six columns.
+4. Dropped all rows that contained null values as this would interfere with SVM functioning.
+* MODEL DESCRIPTION:
+1. 322 rows. Six columns. The features are as follows: Development Regions; Total; Female; Male; Urban Residence; Rural Residence.
+2. Model Algorithm: SVC—Support Vector Classifier. 
+Parameters: Kernel—Kernel SVM type used for multiclass problems; assigned ‘rbf’ which stands for Gaussian as the argument of parameter.
+3. Three model iterations after original run to check for efficacy. Used the three original datasets to test the SVM.
+
+* MODEL PERFORMANCE:
+		precision    recall  f1-score   support
+
+Least Developed       0.60      0.79      0.68        19
+ Less Developed       0.65      0.72      0.68        36
+ More Developed       1.00      0.00      0.00        10
+
+       accuracy                           0.63        65
+      macro avg       0.75      0.50      0.46        65
+   weighted avg       0.69      0.63      0.58        65
+
+* MODEL FINDINGS:
+All five features with attributes (Total, Female, Male, Rural Residence, Urban Residence), were
+highly relevant in predicting the right class; anywhere from 63%-73% accuracy.
+
+
+
